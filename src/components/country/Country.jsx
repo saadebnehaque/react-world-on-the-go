@@ -1,8 +1,12 @@
 import { useState } from "react";
 
 // import React from 'react'; 
-const Country = ({ country }) => {
+const Country = ({ country ,handleVisitedCountries}) => {
     const [isVisited, setIsVisited] = useState(false)
+    const handleVisited = () => {
+        setIsVisited(!isVisited);
+        handleVisitedCountries(country)
+    };
 
     return (
         <>
@@ -13,7 +17,7 @@ const Country = ({ country }) => {
                 </div>
                 <div>
 
-                    <h1 style={{ color: 'white' ,lineHeight:'110%'}}>
+                    <h1 style={{ color: 'white', lineHeight: '110%' }}>
                         {country.name.common}
 
                     </h1>
@@ -36,17 +40,20 @@ const Country = ({ country }) => {
                     <h3>
                         Languages:
                         <span style={{ color: "white" }}>
-                            {country.languages?.languages &&
-                                Object.values(country.languages.languages).join(", ")}
+                            {country.languages?.languages ?
+                                Object.values(country.languages.languages).join(", ") : 'Sign Language'}
                         </span>
                     </h3>
                     <h3>
-                        Area: <span style={{ color: "white" }}>{country.area.area > 300000 ? 'Big Country' : 'Small Country'}</span>
+                        Area: <span style={{ color: "white" }}> {country.area.area} Square Kilometer </span>
+                    </h3>
+                    <h3>
+                        Size: <span style={{ color: "white" }}> {country.area.area > 300000 ? 'Big Country' : 'Small Country'} </span>
                     </h3>
                 </div>
                 <div>
 
-                    <button className="counter" onClick={() => setIsVisited(!isVisited)}>{isVisited ? 'Visited' : 'Not Visited'}</button>
+                    <button className="counter" onClick={handleVisited}>{isVisited ? 'Visited' : 'Not Visited'}</button>
                 </div>
             </div>
         </>
