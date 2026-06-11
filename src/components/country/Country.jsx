@@ -46,7 +46,7 @@ const Country = ({ country }) => {
                 </div>
                 <div>
 
-                    <button onClick={() => setIsVisited(!isVisited)}>{isVisited ? 'Visited' : 'Not Visited'}</button>
+                    <button className="counter" onClick={() => setIsVisited(!isVisited)}>{isVisited ? 'Visited' : 'Not Visited'}</button>
                 </div>
             </div>
         </>
