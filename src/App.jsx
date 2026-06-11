@@ -4,7 +4,7 @@ import Countries from './components/countries/Countries'
 import Spinner from './components/loading/Loading'
 
 const countriesPromise = fetch('https://openapi.programming-hero.com/api/all')
-  .then(res => res.json())
+  .then(res => res.json());
 
 function App() {
   return (
@@ -13,6 +13,8 @@ function App() {
       <Suspense fallback={<Spinner></Spinner>}>
         <Countries countriesPromise={countriesPromise}></Countries>
       </Suspense>
+
+
     </>
   )
 }

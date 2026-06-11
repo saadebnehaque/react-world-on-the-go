@@ -225,9 +225,7 @@
   width: 50px;
   height: 50px;
   border: 5px solid #f3f3f3;
-  /* হালকা ধূসর বর্ডার */
   border-top: 5px solid #3498db;
-  /* নীল রঙের ঘূর্ণন অংশ */
   border-radius: 50%;
   animation: spin 1s linear infinite;
   margin: 20px auto;

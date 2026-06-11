@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-// import React from 'react'; 
-const Country = ({ country ,handleVisitedCountries}) => {
+
+const Country = ({ country, handleVisitedCountries }) => {
     const [isVisited, setIsVisited] = useState(false)
     const handleVisited = () => {
         setIsVisited(!isVisited);
@@ -13,7 +13,7 @@ const Country = ({ country ,handleVisitedCountries}) => {
             <div className={`country ${isVisited && 'visitedCountry'}`}>
                 <div>
 
-                    <img src={country.flags.flags.png} alt={country.flags.flags.alt} />
+                    <img src={country.flags?.flags?.png} alt={country.flags.flags.alt} />
                 </div>
                 <div>
 
